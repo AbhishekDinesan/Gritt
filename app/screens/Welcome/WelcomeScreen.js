@@ -1,8 +1,9 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View, Button, Pressable} from 'react-native';
 import { useNavigation} from '@react-navigation/native';
+import ButtonCreator from '../../components/ButtonCreator/ButtonCreator';
 
-import colours from '../config/colours';
+import colours from '../../config/colours';
 
 
 function WelcomeScreen(props) {
@@ -15,18 +16,21 @@ function WelcomeScreen(props) {
     }
 
     return (
-        
         <ImageBackground 
         style = {styles.background}
-        source={require("../assets/background.jpg")}
+        source={require("../../assets/background.jpg")}
         >
-            <Image style = {styles.logo}source = {require("../assets/logo.png")} />
+            <Image style = {styles.logo}source = {require("../../assets/logo.png")} />
+            <ButtonCreator type = "span" backColour = {colours.primary} text= "Login" onPress={onLoginPressed}/>
+            <ButtonCreator type = "span" backColour = {colours.secondary} text= "Sign Up" onPress={onSignUpPressed}/>
+             {/* 
             <Pressable onPress={onLoginPressed} style = {styles.loginButton}>
                 <Text style = {styles.loginButtonText}>Login</Text>
             </Pressable>
             <Pressable onPress = {onSignUpPressed}style = {styles.signUpButton}>
                 <Text style = {styles.signUpButtonText}>Sign Up</Text>
             </Pressable>
+            */}
         </ImageBackground>
     );
 }

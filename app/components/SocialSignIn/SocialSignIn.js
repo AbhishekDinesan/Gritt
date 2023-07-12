@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import SignInButton from '../SignInButton/SignInButton'
+import SignInButton from '../ButtonCreator/ButtonCreator'
 
 const onSignInFacebookPressed = () =>{
     console.warn("Feature not implemented");

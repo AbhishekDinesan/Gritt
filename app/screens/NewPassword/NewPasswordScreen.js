@@ -1,11 +1,11 @@
 import { View,Image,StyleSheet, useWindowDimensions, ScrollView, Text} from 'react-native'
 import React, {useState} from 'react'
-import CustomInput from '../components/CustomInput';
-import SignInButton from '../components/SignInButton';
-import SocialSignIn from '../components/SocialSignIn';
+import CustomInput from '../../components/CustomInput';
+import ButtonCreator from '../../components/ButtonCreator';
+import SocialSignIn from '../../components/SocialSignIn';
 import { useNavigation } from '@react-navigation/native';
 
-import colours from '../config/colours';
+import colours from '../../config/colours';
 
 
 
@@ -32,9 +32,9 @@ const {newPassword, setNewPassword} = useState('');
         <Text style = {styles.title}>Reset Your Password</Text>
         <CustomInput placeholder= "Code" value = {code} setValue = {setCode}/>
         <CustomInput placeholder= "New Password" value = {newPassword} setValue = {setNewPassword}/>
-        <SignInButton text = "Submit" onPress={onSubmitPressed}/>
+        <ButtonCreator text = "Submit" onPress={onSubmitPressed}/>
 
-      <SignInButton text = "Back to Sign In" onPress={onSignInPressed} type = "tertiary"/> 
+      <ButtonCreator text = "Back to Sign In" onPress={onSignInPressed} type = "tertiary"/> 
 
 
     </View>

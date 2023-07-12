@@ -1,11 +1,11 @@
 import { View,Image,StyleSheet, useWindowDimensions, ScrollView, Text} from 'react-native'
 import React, {useState} from 'react'
-import CustomInput from '../components/CustomInput';
-import SignInButton from '../components/SignInButton';
-import SocialSignIn from '../components/SocialSignIn';
+import CustomInput from '../../components/CustomInput';
+import ButtonCreator from '../../components/ButtonCreator';
+import SocialSignIn from '../../components/SocialSignIn';
 import { useNavigation} from '@react-navigation/native';
 
-import colours from '../config/colours';
+import colours from '../../config/colours';
 
 
 
@@ -54,7 +54,7 @@ const onDontHavePressed = () =>{
         setValue = {setPasswordTwo}
         secureTextEntry={true}
         />
-        <SignInButton text = "Register" onPress={onRegisterPressed}/>
+        <ButtonCreator text = "Register" onPress={onRegisterPressed}/>
 
         <Text style = {styles.text}>
           By registering, you adhere to our <Text style = {styles.link} onPress={OnTermsOfUsePressed}>
@@ -63,7 +63,7 @@ const onDontHavePressed = () =>{
 
         <SocialSignIn />
 
-      <SignInButton text = "Have an Account? Sign In?" onPress={onSignInPressed} type = "tertiary"/> 
+      <ButtonCreator text = "Have an Account? Sign In?" onPress={onSignInPressed} type = "tertiary"/> 
 
 
     </View>

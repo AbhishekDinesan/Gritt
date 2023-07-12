@@ -2,12 +2,12 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
-import WelcomeScreen from "../screens/WelcomeScreen";
-import SignInScreen from '../screens/SignInScreen';
-import SignUpScreen from '../screens/SignUpScreen';
-import ConfirmEmailScreen from '../screens/ConfirmEmailScreen';
-import ForgotPasswordScreen from '../screens/ForgotPasswordScreen';
-import NewPasswordScreen from '../screens/NewPasswordScreen';
+import WelcomeScreen from "../screens/Welcome/WelcomeScreen";
+import SignInScreen from '../screens/SignIn/SignInScreen';
+import SignUpScreen from '../screens/SignUpScreen/SignUpScreen';
+import ConfirmEmailScreen from '../screens/ConfirmEmail/ConfirmEmailScreen';
+import ForgotPasswordScreen from '../screens/ForgotPassword/ForgotPasswordScreen';
+import NewPasswordScreen from '../screens/NewPassword/NewPasswordScreen';
 
 import 'react-native-gesture-handler';
 

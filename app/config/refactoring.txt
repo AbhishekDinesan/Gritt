@@ -2,7 +2,4 @@ Refactoring To-Do List:
 
 - Refactor the Welcome Page functionality
 - Refactor and sort the color scheme
-- Fix the logo and the background color
-- NO HARDCODED DIMENSIONS, make it percentages
-- some good ol file renaming
 

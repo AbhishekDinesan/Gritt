@@ -1,11 +1,12 @@
 import { View,Image,StyleSheet, useWindowDimensions, ScrollView} from 'react-native'
 import React, {useState} from 'react'
-import CustomInput from '../components/CustomInput';
-import SignInButton from '../components/SignInButton';
-import SocialSignIn from '../components/SocialSignIn/SocialSignIn';
+import CustomInput from '../../components/CustomInput';
+import ButtonCreator from '../../components/ButtonCreator';
+import SocialSignIn from '../../components/SocialSignIn/SocialSignIn';
 import { useNavigation } from '@react-navigation/native';
 
-import colours from '../config/colours';
+import colours from '../../config/colours';
+import { Button } from 'react-native-web';
 
 
 const SignInScreen = () => {
@@ -30,23 +31,21 @@ const onDontHavePressed = () =>{
   return (
     <ScrollView showsVerticalScrollIndicator= {false}>
     <View style = {styles.root}>
-        <Image source = {require("../assets/logo.png")} style = {[styles.logo, {height: height * 0.3}]}  />
+        <Image source = {require("../../assets/logo.png")} style = {[styles.logo, {height: height * 0.3}]}  />
         <CustomInput placeholder= "Username" value = {username} setValue = {setUsername}/>
         <CustomInput 
-        placeholder= "Password" 
+        placeholder= "Password" s
         value = {password} 
         setValue = {setPassword}
         secureTextEntry={true}
         />
-        <SignInButton text = "Sign In" onPress={onSignInPressed}/>
+        <ButtonCreator text = "Sign In" onPress={onSignInPressed}/>
 
-        <SignInButton text = "Forgot Password?" onPress={onForgotPasswordPressed} type = "tertiary"/>
+        <ButtonCreator text = "Forgot Password?" onPress={onForgotPasswordPressed} type = "tertiary"/>
 
         <SocialSignIn />
 
-      <SignInButton text = "Don't have an account?" onPress={onDontHavePressed} type = "tertiary"/>
-
-
+      <ButtonCreator text = "Don't have an account?" onPress={onDontHavePressed} type = "tertiary"/>
     </View>
     </ScrollView>
   )

@@ -1,33 +1,40 @@
 import { View,Image,StyleSheet, useWindowDimensions, ScrollView, Text} from 'react-native'
 import React, {useState} from 'react'
-import CustomInput from '../components/CustomInput';
-import SignInButton from '../components/SignInButton';
-import SocialSignIn from '../components/SocialSignIn';
+import CustomInput from '../../components/CustomInput';
+import ButtonCreator from '../../components/ButtonCreator';
+import SocialSignIn from '../../components/SocialSignIn';
 import { useNavigation } from '@react-navigation/native';
 
-import colours from '../config/colours';
+import colours from '../../config/colours';
 
-
-const ForgotPasswordScreen = () => {
-const {username, setUsername} = useState('');
+const ConfirmEmailScreen = () => {
+const {code, setCode} = useState('');
 
 const navigation = useNavigation();
+
 const onSignInPressed = () =>{
   navigation.navigate("SignIn");
 }
 
-const onSendPressed = () =>{
-  navigation.navigate("NewPassword");
+const onConfirmPressed = () =>{
+  console.warn("Feature not implemented");
 }
+
+const onResetPressed = () =>{
+  console.warn("Feature not implemented");
+}
+
   return (
     <ScrollView showsVerticalScrollIndicator= {false}>
     <View style = {styles.root}>
 
-        <Text style = {styles.title}>Reset Your Password</Text>
-        <CustomInput placeholder= "Username" value = {username} setValue = {setUsername}/>
-        <SignInButton text = "Send" onPress={onSendPressed}/>
+        <Text style = {styles.title}>Confirm your email</Text>
+        <CustomInput placeholder= "Enter your confirmation code" value = {code} setValue = {setCode}/>
+        <ButtonCreator text = "Confirm" onPress={onConfirmPressed}/>
 
-      <SignInButton text = "Back to Sign In" onPress={onSignInPressed} type = "tertiary"/> 
+      <ButtonCreator text = "Resend Code" onPress={onResetPressed} type = "secondary"/> 
+
+      <ButtonCreator text = "Back to Sign In" onPress={onSignInPressed} type = "tertiary"/> 
 
 
     </View>
@@ -59,4 +66,4 @@ const styles = StyleSheet.create({
       
 });
 
-export default ForgotPasswordScreen
+export default ConfirmEmailScreen
