@@ -1,9 +1,10 @@
-import { View,Image,StyleSheet, useWindowDimensions, ScrollView} from 'react-native'
+import { View,Image,StyleSheet, useWindowDimensions, ScrollView, TextInput} from 'react-native'
 import React, {useState} from 'react'
 import CustomInput from '../../components/CustomInput';
 import ButtonCreator from '../../components/ButtonCreator';
 import SocialSignIn from '../../components/SocialSignIn/SocialSignIn';
 import { useNavigation } from '@react-navigation/native';
+import {useForm, Controller} from 'react-hook-form'
 
 import colours from '../../config/colours';
 import { Button } from 'react-native-web';
@@ -14,10 +15,16 @@ const {height} = useWindowDimensions();
 const {username, setUsername} = useState('');
 const {password, setPassword} = useState('');
 
+const {
+  control, 
+  handleSubmit, 
+  formState = {errors},} = useForm();
+
 const navigation = useNavigation();
 
-const onSignInPressed = () =>{
-  console.warn("Feature not implemented");
+const onSignInPressed = (data) =>{
+  //console.warn("Feature not implemented");
+  console.warn(data);
 }
 
 const onForgotPasswordPressed = () =>{
@@ -32,14 +39,22 @@ const onDontHavePressed = () =>{
     <ScrollView showsVerticalScrollIndicator= {false}>
     <View style = {styles.root}>
         <Image source = {require("../../assets/logo.png")} style = {[styles.logo, {height: height * 0.3}]}  />
-        <CustomInput placeholder= "Username" value = {username} setValue = {setUsername}/>
+  
         <CustomInput 
-        placeholder= "Password" s
-        value = {password} 
-        setValue = {setPassword}
-        secureTextEntry={true}
+        name = "username"
+        placeholder= "Username" 
+        control = {control}
+        rules = {{required: true}}
         />
-        <ButtonCreator text = "Sign In" onPress={onSignInPressed}/>
+        <CustomInput 
+        placeholder= "Password" 
+        name = "password"
+        control = {control}
+        secureTextEntry={true}
+        rules = {{required: true}}
+        />
+
+        <ButtonCreator text = "Sign In" onPress={handleSubmit(onSignInPressed)}/>
 
         <ButtonCreator text = "Forgot Password?" onPress={onForgotPasswordPressed} type = "tertiary"/>
 
