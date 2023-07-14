@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form';
 import colours from '../../config/colours';
 
 
-const CustomInput = ({control, name, rules = {}, placeholder, secureTextEntry}) => {
+const CustomInput = ({control, name, placeholder, secureTextEntry}) => {
   return (
     
     <Controller 
@@ -17,7 +17,7 @@ const CustomInput = ({control, name, rules = {}, placeholder, secureTextEntry}) 
       value = {value} 
       onChangeText = {onChange} 
       onBlur = {onBlur}
-      placeholder = "placeholder" 
+      placeholder = {placeholder}
       style = {[styles.input, {}]}
       secureTextEntry = {secureTextEntry}
       />

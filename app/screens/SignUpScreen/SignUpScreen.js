@@ -1,27 +1,26 @@
-import { View,Image,StyleSheet, useWindowDimensions, ScrollView, Text} from 'react-native'
-import React, {useState} from 'react'
+import { View,Image,StyleSheet, useWindowDimensions, ScrollView, Text} from 'react-native';
+import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput';
 import ButtonCreator from '../../components/ButtonCreator';
 import SocialSignIn from '../../components/SocialSignIn';
-import { useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import {useForm, Controller} from 'react-hook-form'
 
 import colours from '../../config/colours';
 
 
 
 const SignUpScreen = () => {
-const [email, setEmail]  = useState('');
-const {username, setUsername} = useState('');
-const {password, setPassword} = useState('');
-const {passwordTwo, setPasswordTwo} = useState('');
+  
+const {control, handleSubmit} = useForm();
 
 const navigation = useNavigation();
 
-const onSignInPressed = () =>{
-  navigation.navigate("SignIn");
-}
 const onRegisterPressed = () =>{
   navigation.navigate("ConfirmEmail");
+}
+const onSignInPressed = () =>{
+  navigation.navigate("SignIn");
 }
 
 const OnTermsOfUsePressed = () =>{
@@ -40,21 +39,30 @@ const onDontHavePressed = () =>{
     <View style = {styles.root}>
 
         <Text style = {styles.title}>Create an Account</Text>
-        <CustomInput placeholder= "Username" value = {username} setValue = {setUsername}/>
-        <CustomInput placeholder= "Email" value = {email} setValue = {setEmail}/>
+        <CustomInput
+        control = {control}
+        name = "username" 
+        placeholder= "Username" 
+        />
         <CustomInput 
+        control = {control}
+        placeholder= "Email" 
+        name = "email" 
+        />
+        <CustomInput 
+        control = {control}
         placeholder= "Password" 
-        value = {password} 
-        setValue = {setPassword}
-        secureTextEntry={true}
+        secureTextEntry
+        name = "password" 
         />
         <CustomInput 
+        control = {control}
         placeholder= "Repeat Password" 
-        value = {passwordTwo} 
-        setValue = {setPasswordTwo}
-        secureTextEntry={true}
+        name = "password2" 
+        secureTextEntry={true}        
         />
-        <ButtonCreator text = "Register" onPress={onRegisterPressed}/>
+
+        <ButtonCreator text = "Register" onPress={handleSubmit(onRegisterPressed)}/>
 
         <Text style = {styles.text}>
           By registering, you adhere to our <Text style = {styles.link} onPress={OnTermsOfUsePressed}>
