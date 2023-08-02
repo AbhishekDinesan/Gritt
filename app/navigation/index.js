@@ -10,6 +10,7 @@ import ForgotPasswordScreen from '../screens/ForgotPassword/ForgotPasswordScreen
 import NewPasswordScreen from '../screens/NewPassword/NewPasswordScreen';
 
 import 'react-native-gesture-handler';
+import LocationScreen from '../screens/Location/LocationScreen';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const Navigation = () => {
         <Stack.Screen name = "ConfirmEmail" component = {ConfirmEmailScreen}  />
         <Stack.Screen name = "ForgotPassword" component = {ForgotPasswordScreen}  />
         <Stack.Screen name = "NewPassword" component = {NewPasswordScreen}  />
+        <Stack.Screen name = "Location" component = {LocationScreen}  />
       </Stack.Navigator>
     </NavigationContainer>
   )

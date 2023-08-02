@@ -6,8 +6,10 @@ import SocialSignIn from '../../components/SocialSignIn/SocialSignIn';
 import { useNavigation } from '@react-navigation/native';
 import {useForm, Controller} from 'react-hook-form'
 
+
 import colours from '../../config/colours';
 import { Button } from 'react-native-web';
+import { SignInGoogle } from '../../config/firebase';
 
 
 const SignInScreen = () => {
@@ -19,7 +21,6 @@ const {
   control, 
   handleSubmit, 
   formState = {errors},} = useForm();
-
 const navigation = useNavigation();
 
 const onSignInPressed = (data) =>{
@@ -29,6 +30,7 @@ const onSignInPressed = (data) =>{
 
 const onForgotPasswordPressed = () =>{
   navigation.navigate("ForgotPassword");
+  
 }
 
 const onDontHavePressed = () =>{
