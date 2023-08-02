@@ -4,9 +4,9 @@ Gritt is intended to be a community-based mobile application for all things athl
 Developed with React Native for both IOS/Android, authentication flow with AWS Ampligy Backend + Google Map API for "Nearest Gym" Locater.
 
 ## Technology
-React Native: V0.71.8
-AWS Amplify: V1.2.4
-Google Places API
+React Native: V0.71.8   
+AWS Amplify: V1.2.4   
+Google Places API   
 
 ## Views
 
