@@ -13,7 +13,11 @@ Google Places API
 Some of basic user auth screens, 
 
 <img width="178" alt="image" src="https://github.com/AbhishekDinesan/Gritt/assets/69426715/4e5be53a-6954-46ac-b832-916ea8470f9a">
+<img width="176" alt="image" src="https://github.com/AbhishekDinesan/Gritt/assets/69426715/4f9e413a-95d8-4add-8ddf-531240b7a44b">
 <img width="173" alt="image" src="https://github.com/AbhishekDinesan/Gritt/assets/69426715/6bb0598f-2d4f-450c-affd-e35d0adbc294">
+<img width="161" alt="image" src="https://github.com/AbhishekDinesan/Gritt/assets/69426715/11272d64-14f0-4a09-b7ee-441e55fa540f">
+
+
 
 
 
@@ -28,4 +32,5 @@ Using Google Maps API, we are able to use a search tab to pinpoint the nearest G
 
 ## Features in implementation
 
-User Profiles and Content Management.
+- User Profiles!
+- State Management with Redux. 
